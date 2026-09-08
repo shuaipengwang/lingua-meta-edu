@@ -1,0 +1,15 @@
+<view class="lesson">
+  <avatar image="{{avatarImg}}" line="{{teacherLine}}" />
+
+  <view class="sentence-card" wx:if="{{current}}">
+    <image class="sent-img" src="{{current.imageRef}}" mode="aspectFit" />
+    <view class="en">{{current.enText}}</view>
+    <view class="cn">{{current.cnText}}</view>
+  </view>
+
+  <recordButton wx:if="{{awaitingSpeech}}" bind:recorded="onRecorded" />
+
+  <view class="hint" wx:if="{{loadingScore}}">听到啦…</view>
+
+  <button class="btn-primary" wx:if="{{finished}}" bind:tap="goSummary">完成本课</button>
+</view>

@@ -1,0 +1,6 @@
+.lesson { padding: 16px; display: flex; flex-direction: column; gap: 16px; align-items: center; }
+.sentence-card { background: #fff; border-radius: 12px; padding: 16px; width: 100%; text-align: center; border: 1px solid rgba(23,23,23,0.08); }
+.sent-img { width: 120px; height: 120px; }
+.en { font-size: 18px; font-weight: 500; margin-top: 8px; }
+.cn { font-size: 14px; color: #52525B; margin-top: 4px; }
+.hint { font-size: 14px; color: #52525B; }
