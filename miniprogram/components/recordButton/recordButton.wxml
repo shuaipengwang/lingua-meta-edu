@@ -1,0 +1,8 @@
+<button
+  class="rec {{recording ? 'rec-on' : ''}}"
+  bind:touchstart="onStart"
+  bind:touchend="onEnd"
+  bind:touchcancel="onEnd"
+>
+  {{recording ? '请说话…' : '按住说话'}}
+</button>

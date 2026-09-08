@@ -1,0 +1,5 @@
+.rec {
+  background: #4B3FE3; color: #fff; border-radius: 999px;
+  padding: 16px 24px; font-size: 16px;
+}
+.rec-on { background: #6054F1; transform: scale(0.97); }
