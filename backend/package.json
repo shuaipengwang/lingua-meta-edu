@@ -9,6 +9,7 @@
   "scripts": {
     "test": "vitest run",
     "dev": "tsx watch src/server.ts",
+    "seed": "tsx src/seeds/runSeed.ts",
     "postinstall": "prisma skills sync || exit 0"
   },
   "keywords": [],
