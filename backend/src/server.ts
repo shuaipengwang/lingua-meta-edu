@@ -1,6 +1,7 @@
 import Fastify from 'fastify';
 import { contentRoutes } from './content/contentRoutes.js';
 import { progressRoutes } from './progress/progressRoutes.js';
+import { speechRoutes } from './speech/speechRoutes.js';
 
 export function buildServer() {
   const server = Fastify({ logger: true });
@@ -8,6 +9,7 @@ export function buildServer() {
   server.get('/health', async () => ({ status: 'ok' }));
   server.register(contentRoutes);
   server.register(progressRoutes);
+  server.register(speechRoutes);
 
   return server;
 }
