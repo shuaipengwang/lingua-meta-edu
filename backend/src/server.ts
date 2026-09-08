@@ -1,9 +1,11 @@
 import Fastify from 'fastify';
+import { contentRoutes } from './content/contentRoutes.js';
 
 export function buildServer() {
   const server = Fastify({ logger: true });
 
   server.get('/health', async () => ({ status: 'ok' }));
+  server.register(contentRoutes);
 
   return server;
 }
