@@ -1,0 +1,10 @@
+{
+  "miniprogramRoot": "./",
+  "setting": {
+    "es6": true,
+    "useCompilerPlugins": true,
+    "typescript": true
+  },
+  "appid": "",
+  "compileType": "miniprogram"
+}

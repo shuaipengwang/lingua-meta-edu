@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/lessons/lessons",
+    "pages/lesson/lesson",
+    "pages/summary/summary"
+  ],
+  "window": {
+    "navigationBarTitleText": "英语陪练",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black"
+  },
+  "useExtendedLib": {},
+  "sitemapLocation": "sitemap.json"
+}
