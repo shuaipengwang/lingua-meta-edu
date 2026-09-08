@@ -1,0 +1,7 @@
+<view class="lessons">
+  <view class="lesson-row" wx:for="{{lessons}}" wx:key="lessonId" data-id="{{item.lessonId}}" bind:tap="goLesson">
+    <view class="title">{{item.title}}</view>
+    <view class="meta">难度 {{item.difficulty}} 星</view>
+    <view class="status">{{item.statusLabel}}</view>
+  </view>
+</view>

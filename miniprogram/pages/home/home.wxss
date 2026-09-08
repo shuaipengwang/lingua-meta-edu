@@ -1,0 +1,6 @@
+.home { padding: 16px; }
+.streak { font-size: 14px; color: #52525B; margin-bottom: 12px; }
+.theme-list { display: flex; flex-direction: column; gap: 12px; }
+.theme-card { background: #fff; border-radius: 12px; padding: 12px; border: 1px solid rgba(23,23,23,0.08); }
+.cover { width: 100%; height: 120px; border-radius: 8px; }
+.title { margin-top: 8px; font-size: 16px; font-weight: 500; }

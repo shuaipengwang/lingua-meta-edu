@@ -1,0 +1,9 @@
+<view class="home">
+  <view class="streak">连续学习 {{streak}} 天</view>
+  <view class="theme-list">
+    <view class="theme-card" wx:for="{{themes}}" wx:key="themeId" data-id="{{item.themeId}}" bind:tap="goLessons">
+      <image class="cover" src="{{item.coverImage}}" mode="aspectFill" />
+      <view class="title">{{item.name}}</view>
+    </view>
+  </view>
+</view>
