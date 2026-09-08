@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Theme {
+  id          String    @id @default(cuid())
+  themeId     String    @unique
+  name        String
+  coverImage  String
+  order       Int
+  lessons     Lesson[]
+}
+
+model Lesson {
+  id          String    @id @default(cuid())
+  lessonId    String    @unique
+  themeId     String
+  theme       Theme     @relation(fields: [themeId], references: [themeId])
+  title       String
+  difficulty  Int
+  unlockRule  String    @default("prev_1star")
+  sentences   Sentence[]
+  progress    UserProgress[]
+}
+
+model Sentence {
+  id          String    @id @default(cuid())
+  sentenceId  String    @unique
+  lessonId    String
+  lesson      Lesson    @relation(fields: [lessonId], references: [lessonId])
+  enText      String
+  cnText      String
+  audioRef    String
+  imageRef    String
+  attempts    SentenceAttempt[]
+}
+
+model User {
+  id          String    @id @default(cuid())
+  userId      String    @unique
+  openid      String    @unique
+  nickname    String
+  avatar      String
+  createdAt   DateTime  @default(now())
+  progress    UserProgress[]
+  attempts    SentenceAttempt[]
+}
+
+model UserProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [userId])
+  lessonId    String
+  lesson      Lesson    @relation(fields: [lessonId], references: [lessonId])
+  stars       Int       @default(0)
+  status      String    @default("locked")
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+model SentenceAttempt {
+  id          String    @id @default(cuid())
+  attemptId   String    @unique
+  userId      String
+  user        User      @relation(fields: [userId], references: [userId])
+  sentenceId  String
+  sentence    Sentence  @relation(fields: [sentenceId], references: [sentenceId])
+  score       Int       @default(0)
+  retry       Boolean   @default(false)
+  timeout     Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+}
