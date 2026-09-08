@@ -1,0 +1,3 @@
+.summary { padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.stars { font-size: 32px; color: #4B3FE3; }
+.sticker { font-size: 14px; color: #52525B; }
