@@ -19,12 +19,24 @@ Page({
     awaitingSpeech: false,
     loadingScore: false,
     finished: false,
-  },
+    viewOnly: false,
+  } as { viewOnly: boolean },
 
   async onLoad(query: { lessonId: string }) {
+    this.checkRecordPermission();
     const sentences = await listSentences(query.lessonId);
     this.setData({ sentences });
     this.next();
+  },
+
+  async checkRecordPermission() {
+    try {
+      const setting = await wx.getSetting();
+      if (!setting.authSetting['scope.record']) {
+        // 已拒绝过：进入只看不读模式
+        this.setData({ viewOnly: true });
+      }
+    } catch {}
   },
 
   next() {
