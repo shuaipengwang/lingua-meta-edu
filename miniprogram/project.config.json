@@ -2,7 +2,7 @@
   "miniprogramRoot": "./",
   "setting": {
     "es6": true,
-    "useCompilerPlugins": true,
+    "useCompilerPlugins": ["typescript"],
     "typescript": true
   },
   "appid": "",
